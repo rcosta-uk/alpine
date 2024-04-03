@@ -5,7 +5,8 @@ Hi, this is a quick write on how to create an Alpine template:
 
 Create a new VM and use a high number identify (e. 9000) and a simple name (e. alpine-cloudinit)
 
-**Hardware:**\
+**Hardware:**
+
 | OS | Alpine virtual ISO file downloaded early | |
 | :-- | -- | -- |
 | SYSTEM | Enable Qemu Agent |  |
