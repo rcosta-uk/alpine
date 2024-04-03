@@ -126,3 +126,6 @@ poweroff
 # DONE! 
 
 Enjoy the pleasure of right-click and full-clone the template to a VM. You can specify all the settings on the new VM before the first boot, like hardware, network, and cloud-init settings.
+
+![How the final VM hardware should look like before convert to template](https://github.com/rcosta-uk/alpine/assets/157812049/dad5a120-b37c-4f73-b5b9-245f41b4ab81)\
+How the final VM hardware should look like before convert to template
