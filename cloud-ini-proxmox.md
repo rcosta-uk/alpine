@@ -8,11 +8,11 @@ Create a new VM and use a high number identify (e. 9000) and a simple name (e. a
 **Hardware:**\
 | OS | Alpine virtual ISO file downloaded early | |
 | :-- | -- | -- |
-| SYSTEM | VGA: Serial terminal 0 | Enable Qemu Agent |
+| SYSTEM | Enable Qemu Agent |  |
 | HDD | SCSI 4Gb   | This can be increased according to the needs |
 | CPU | 1 core Type: Host  | Some as the above |
 | RAM | 512 MiB RAM with 256 MiB minimum |   |
-| NET | Add bridge 
+| NET | Add bridge and vLAN(if used) | Access to internet is needed |
  
 \
 \
@@ -28,8 +28,8 @@ Login as root and type setup-alpine to initialise the installation. Choose the s
 
 | prompt | answer |
 | :-- | -- |
-| keyboard: | UK |
-| variant: | UK |
+| keyboard: | gb |
+| variant: | gb |
 | hostname: | alpine |
 | interface: | eth0 |
 | ip: | dhcp |
@@ -38,24 +38,32 @@ Login as root and type setup-alpine to initialise the installation. Choose the s
 | timezone: | Europe/London |
 | proxy: | none|
 | mirrors: | 1 |
+| user: | no |
 | ssh: | openssh |
-| disk: | avalilable disk |
+| root: | default |
+| ssh key: | default |
+| disk: | select avalilable disk |
 | format: | set it up as lvmsys, use ? for more info |
 | erase: | y |
 
+Alpine is installed on the drive, power off (```poweroff```) the VM and remove the drive withthe  iso image.
 
-
-Unmount the iso file from the machine and reboot.
 
 # Install cloud-init
 
-Login with user root
-Cloud init needs some dependencies to work.
+Power on the VM, log in with user root 
+
+Cloud-init needs some dependencies to work, some of these dependencies are in the community repositories:
+
+```bash
+sed -i 's/^#//' /etc/apk/repositories
+```
+
 <i>These dependencies will be different based on Alpine Version.</i>
 
 ```bash
 apk add gcc linux-headers py3-pip musl-dev python3-dev e2fsprogs e2fsprogs-extra cloud-init \
- libblockdev lsblk parted sfdisk sgdisk lvm2 device-mapper \
+ libblockdev lsblk parted sfdisk sgdisk lvm2 device-mapper nano \
  doas eudev mount openssh-server-pam sudo py3-pyserial py3-netifaces
 ```
 
