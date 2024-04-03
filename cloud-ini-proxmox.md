@@ -5,11 +5,15 @@ Hi, this is a quick write on how to create an Alpine template:
 
 Create a new VM and use a high number identify (e. 9000)
 
-  | RAM | 1024 MiB RAM with 512 MiB minimum |  This can be increased according to the VM in question
-  | CPU | 1 core  | Some as the above|
-  | HDD | 4Gb   | |
-  | DVD | Alpine ISO file  | |
+| | |
+| :-- | -- |
+| RAM | 1024 MiB RAM with 512 MiB minimum |  This can be increased according to the VM in question
+| CPU | 1 core  | Some as the above|
+| HDD | 4Gb   | |
+| DVD | Alpine ISO file  | |
 
+\
+\
 This is the iso that was used,  https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86_64/alpine-virt-3.19.1-x86_64.iso
 
 
@@ -17,8 +21,11 @@ Start the VM and access to the console:
 
 Login as root and type setup-alpine to initialise the installation. Choose the standard option to the installation:
 
-|    | |
+> **Don't configure a user besides root.**
 
+
+| prompt | answer |
+| :-- | -- |
 | keyboard: | UK |
 | variant: | UK |
 | hostname: | alpine |
@@ -34,7 +41,7 @@ Login as root and type setup-alpine to initialise the installation. Choose the s
 | format: | set it up as lvmsys, use ? for more info |
 | erase: | y |
 
-<i>Don't configure a user besides root.</i>
+
 
 Unmount the iso file from the machine and reboot.
 
