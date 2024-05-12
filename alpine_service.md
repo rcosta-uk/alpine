@@ -105,7 +105,7 @@ The syntax is:
 # rc-service {service-name} stop
 ```
 
-##How to restart service
+## How to restart service
 
 The syntax is:
 ```
